@@ -80,16 +80,16 @@ unsigned int detectCenter(){
         return ADC10MEM;
 }
 void moveForward(void){
-    TA0CCR1 = ;                // set duty cycle to 25/100 (25%)
+		TA0CCR1 = 50;
 		TA0CCTL1 &= ~(OUTMOD2|OUTMOD1|OUTMOD0);
-		TA0CCTL1 |= OUTMOD_7;        // set TACCTL1 to Reset / Set mode
+		TA0CCTL1 |= OUTMOD_7;
 		TA0CCTL0 &= ~(OUTMOD2|OUTMOD1|OUTMOD0);
-		TA0CCTL0 |= OUTMOD_5;		// set TACCTL0 to Reset
+		TA0CCTL0 |= OUTMOD_5;
 
 		TA1CCTL1 &= ~(OUTMOD2|OUTMOD1|OUTMOD0);
-		TA1CCTL1 |= OUTMOD_7;        // set TACCTL1 to Reset / Set mode
+		TA1CCTL1 |= OUTMOD_7;
 		TA1CCTL0 &= ~(OUTMOD2|OUTMOD1|OUTMOD0);
-		TA1CCTL0 |= OUTMOD_5;		// set TACCTL0 to Reset
+		TA1CCTL0 |= OUTMOD_5;
 }
 
 void moveBackward(void){
